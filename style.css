@@ -12,6 +12,7 @@ header.header video {
 
 .header .overlay {
   background-color: rgba(255, 255, 255, 0.7);
+  overflow: hidden;
 }
 
 /* header.header {
@@ -472,20 +473,75 @@ footer .copyright p {
 }
 
 /* 900px تعديل بعض التنسيقات الخاصة بالترويسة لتتناسب مع شاشة العرض الأصغر من */
-@media (max-width: 900px) {
+@media (max-width: 991.5px) {
   header {
     overflow-x: hidden;
   }
+  
 
   .product-img img:first-of-type {
-    width: 120%;
+    width: 100%;
   }
-
+  
   .buttons {
     margin-bottom: 50px;
   }
 
   section.features .feature .media img {
-    margin: 0 2rem;
+    margin: 2.5rem 2rem 0;
+  }
+}
+
+
+@media (max-width: 767.5px){
+  .features .feature .media{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  header.header .overlay .product-img img.label {
+    position: absolute;
+    top: -35px;
+    right: -57px;
+  }
+
+  header.header .overlay .product-img p {
+    top: -13px;
+    right: -6px;
+  }
+
+  /* تنسيق الفقرات النصية ذات العدد الزوجي فقط لتصبح محاذاة لليسار */
+section.features .feature:nth-of-type(even) {
+  text-align: right;
+  }
+
+  section.features .feature:nth-of-type(even) .media .media-body h5 {
+    border-left: 0px;
+    border-right: 2px solid #7233a2;
+}
+}
+@media (max-width: 575.5px) {
+  .features .feature .media{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .product-img img:first-of-type {
+    width: 85%;
+    margin-right: 41px;
+  }
+  header.header .overlay .product-img img.label {
+    position: absolute;
+    top: -42px;
+    right: -16px;
+  }
+  header.header .overlay .product-img p {
+    position: absolute;
+    top: -22px;
+    right: 34px;
+  }
+  header.header .overlay .navbar {
+    margin-bottom: 0;
   }
 }
